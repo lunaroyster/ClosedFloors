@@ -12,7 +12,20 @@
                 </div>              
             </div>
         </div>
-        <div class="inputContainer"></div>
+        <div class="inputContainer">
+            <h5>Service</h5>
+            <div class="row">
+                <div class="input-field col s12">
+                    <select ng-model="selectedService">
+                        <option value="" disabled selected>Service</option>
+                        <option>ATM</option>
+                        <option>Bank</option>
+                        <option>Petrol Bunk</option>
+                    </select>
+                    <label>Pick the service you're looking for</label>
+                </div>
+            </div>
+        </div>
         <div class="inputContainer"></div>
     </form>
 </div>
