@@ -1,6 +1,17 @@
 <div class="container" id="search">
     <form>
-        <div class="inputContainer"></div>
+        <div class="inputContainer">
+            <h5>Location</h5>
+            <label>Your Position: <span>{{loc.latitude}}</span>, <span>{{loc.longitude}}</span></label>
+            <div class="row">
+                <div class="col s12 m6 marginTop input-field">
+                    <button class="waves-effect waves-light btn" type="button" ng-click="getloc()">Get Location</button>
+                </div>
+                <div class="col s12 m6 marginTop input-field">
+                    <button class="waves-effect waves-light btn" type="button" >Use Postal Code</button>
+                </div>              
+            </div>
+        </div>
         <div class="inputContainer"></div>
         <div class="inputContainer"></div>
     </form>
