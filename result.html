@@ -1,4 +1,4 @@
-<div class="container" id="result">
+<div class="container" id="result" ng-init="loadResults()">
     <div class="card-panel transparent z-depth-5" ng-bind="resultmessage" ng-class="{ 'invisible': messageInvisibility }" ng-click="messageInvisibility = !messageInvisibility"></div>
     <div class="resultContainer dashedBorder" ng-repeat="res in searchResults">
         <div class="row">
