@@ -6,6 +6,12 @@ body {
     padding: 1em;
     margin-top: 1em;
 }
+
+.resultContainer {
+    padding: 1em;
+    margin-top: 1em;
+}
+
 .dashedBorder {
     border: 2px dashed #ffffff;
 }
@@ -19,6 +25,7 @@ button {
 .invisible {
     display: none;
 }
+
 
 /*.fade {*/
 /*    transition: all 1s;*/
