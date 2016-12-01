@@ -1,9 +1,11 @@
 var serviceCore = require('../core/service');
 
 module.exports.getServices = function(req, res) {
-    serviceCore.getServicesByLocation(req.query.latitude, req.query.longitude, req.query.serviceType, function(response) {
-        res.status(200);
-        res.send(JSON.stringify(response));
+    serviceCore.getServicesByLocation(req.query.latitude, req.query.longitude, req.query.serviceType, function(err, response) {
+        if(!err){
+            res.status(200);
+            res.json(response);
+        }
     });
 };
 
