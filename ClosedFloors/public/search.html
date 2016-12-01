@@ -5,11 +5,16 @@
             <label>Your Position: <span>{{loc.latitude}}</span>, <span>{{loc.longitude}}</span></label>
             <div class="row">
                 <div class="col s12 m6 marginTop input-field">
-                    <button class="waves-effect waves-light btn" type="button" ng-click="getloc()">Get Location</button>
+                    <button class="waves-effect waves-light btn" type="button" id="locbtn" ng-click="getloc()">Get Location</button>
                 </div>
                 <div class="col s12 m6 marginTop input-field">
-                    <button class="waves-effect waves-light btn" type="button" >Use Postal Code</button>
-                </div>              
+                    <button class="waves-effect waves-light btn" type="button" id="postalbtn">Use Postal Code</button>
+                </div>
+            </div>
+            <div class="row" id="postalcoderow">
+                <div class="col s12 m12 marginTop input-field">
+                  <input type="text" name='postalcode' placeholder="Postal Code"/>
+                </div>
             </div>
         </div>
         <div class="inputContainer dashedBorder">
@@ -36,4 +41,10 @@
     $(document).ready(function() {
         $('select').material_select();
     });
+    $('#postalbtn').click(function() {
+        $('#postalcoderow').show();
+    })
+    $('#locbtn').click(function() {
+        $('#postalcoderow').hide();
+    })
 </script>

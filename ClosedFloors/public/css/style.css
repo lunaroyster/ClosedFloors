@@ -26,6 +26,10 @@ button {
     display: none;
 }
 
+#postalcoderow {
+    display: none;
+}
+
 
 /*.fade {*/
 /*    transition: all 1s;*/
