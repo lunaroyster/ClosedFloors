@@ -1,0 +1,17 @@
+<div class="container" id="result" ng-init="loadResults()">
+    <div class="card-panel transparent z-depth-5" ng-bind="resultmessage" ng-class="{ 'invisible': messageInvisibility }" ng-click="messageInvisibility = !messageInvisibility"></div>
+    <div class="resultContainer dashedBorder" ng-repeat="res in searchResults">
+        <div class="row">
+            <h5 class="name col s4" ng-bind="res.name"></h5>
+            <div class="address s8" ng-bind="res.address"></div>
+        </div>
+        <div class="row trackers">
+            <div class="tracker" ng-repeat="tracker in res.trackers">
+                <div>
+                    <div class="name col s9" ng-bind="tracker.name"></div>
+                    <div class="status col s3" ng-bind="tracker.status"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
