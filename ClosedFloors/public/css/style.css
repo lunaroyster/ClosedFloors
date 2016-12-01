@@ -33,19 +33,19 @@ button {
 @font-face {
   font-family: 'WhitneyHTF-Medium'; /* Got a bunch of other Whitney Styles in /fonts. Choose any keks*/
   /*font-weight: bold;*/
-  src: url("../WhitneyHTF-Medium.otf") format("opentype");
+  src: url("../../WhitneyHTF-Medium.otf") format("opentype");
 }
 @font-face {
   font-family: 'WhitneyHTF-Light'; /* Got a bunch of other Whitney Styles in /fonts. Choose any keks*/
   /*font-weight: bold;*/
-  src: url("../WhitneyHTF-Light.otf") format("opentype");
+  src: url("../../WhitneyHTF-Light.otf") format("opentype");
 }
 @font-face {
   font-family: 'WhitneyHTF-Black'; /* Got a bunch of other Whitney Styles in /fonts. Choose any keks*/
   /*font-weight: bold;*/
-  src: url("../WhitneyHTF-Black.otf") format("opentype");
+  src: url("../../WhitneyHTF-Black.otf") format("opentype");
 }
-a, p, h1, h2, h4, h5, h6 {
+a, p, h1, h2, h3, h4, h5, h6 {
     font-family: "WhitneyHTF-Light", Georgia, serif;
 }
 
