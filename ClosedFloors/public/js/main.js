@@ -19,32 +19,33 @@ var searchResults = [{
 // This code handles the GUI and is a requirement of Single Page Applications. It doesn't provide any other function.
 app.config(function($routeProvider) {
     $routeProvider
-    
+
     .when('/', {
         controller  : 'SearchController',
         controllerAs: 'search',
         templateUrl : './search.html'
     })
-    
+
     .when('/result', {
         controller  : 'ResultController',
         controllerAS: 'result',
         templateUrl : './result.html'
     })
-    
+
     .when('/saved', {
         controller  : 'SavedController',
         templateUrl : './saved.html'
     })
-    
+
     .otherwise({redirectTo: '/'});
-    
+
 });
 
 app.controller('SearchController', function($scope, $http, $location) {
     $scope.loc = {
        latitude: 0,
-       longitude: 0
+       longitude: 0,
+       address: 0
     };
     $scope.selected = {
         service: ""
@@ -58,8 +59,26 @@ app.controller('SearchController', function($scope, $http, $location) {
                 $scope.$digest();
             });
         }
-        
+
     };
+    $scope.getPostalCode = function() {
+        $scope.loc.address = document.getElementById('postalcode').value
+        $http({
+                method: 'GET',
+                url: 'https://maps.googleapis.com/maps/api/geocode/json',
+                params: {
+                    'address': $scope.loc.address,
+                    'sensor': true
+                }
+        }).then(function(response) {
+            console.log("TRIGGERED AGAIN", response)
+            $scope.loc.latitude = response.data.results[0].geometry.location.lat
+            $scope.loc.longitude = response.data.results[0].geometry.location.lng
+            console.log($scope.loc.latitude, $scope.loc.longitude)
+        }, function(error) {
+            console.log(error)
+        })
+    }
     $scope.getResults = function() {
         $http({
             method: 'GET',
@@ -95,5 +114,5 @@ app.controller('ResultController', function($scope) {
 });
 
 app.controller('SavedController', function($scope) {
-    
+
 });

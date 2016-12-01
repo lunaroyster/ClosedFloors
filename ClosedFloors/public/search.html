@@ -12,31 +12,34 @@
                 </div>
             </div>
             <div class="row" id="postalcoderow">
-                <div class="col s12 m12 marginTop input-field">
-                  <input type="text" name='postalcode' placeholder="Postal Code"/>
+                <div class="col s12 m6"></div>
+                <div class="col s12 m4 marginTop input-field">
+                    <input type="number" id='postalcode' placeholder="Postal Code" />
+                </div>
+                <div class="col s12 m2 marginTop input-field">
+                    <button class="waves-effect waves-light btn" type="button" id='getpostalcodebtn' ng-click="getPostalCode()">Search Postal Code</button>
                 </div>
             </div>
-        </div>
-        <div class="inputContainer dashedBorder">
-            <h5>Service</h5>
-            <div class="row">
-                <div class="input-field col s12">
-                    <select ng-model="selectedService">
+            <div class="inputContainer dashedBorder">
+                <h5>Service</h5>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select ng-model="selected.service">
                         <option value="" disabled selected>Service</option>
                         <option>ATM</option>
                         <option>Bank</option>
                         <option>Petrol Bunk</option>
                     </select>
-                    <label>Pick the service you're looking for</label>
+                        <label>Pick the service you're looking for</label>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="inputContainer">
-            <button class="waves-effect waves-light btn-large" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
-        </div>
+            <div class="inputContainer">
+                <button class="waves-effect waves-light btn-large" ng-click="getResults()">Submit<i class="material-icons right">send</i></button>
+            </div>
     </form>
-</div>
-<script>
+    </div>
+ <script>
     /* global $ */
     $(document).ready(function() {
         $('select').material_select();
