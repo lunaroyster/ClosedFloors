@@ -45,7 +45,7 @@ button {
   /*font-weight: bold;*/
   src: url("../../WhitneyHTF-Black.otf") format("opentype");
 }
-a, p, h1, h2, h4, h5, h6 {
+a, p, h1, h2, h3, h4, h5, h6 {
     font-family: "WhitneyHTF-Light", Georgia, serif;
 }
 
