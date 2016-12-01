@@ -7,7 +7,14 @@ var googleMapsClient = require('@google/maps').createClient({
 
 var typeMap = new Map();
 typeMap.set("ATM", "atm");
-typeMap.set("Petrol Bunk", "gas_station");
+typeMap.set("Petrol Pump", "gas_station");
+typeMap.set("Bakery", "atm");
+typeMap.set("Bar", "atm");
+typeMap.set("Library", "libraru");
+typeMap.set("Hospital", "hospital");
+typeMap.set("Museum", "museum");
+typeMap.set("Gym", "gym");
+
 
 module.exports.getServicesByLocation = function(latitude, longitude, serviceType, callback) {
     googleMapsClient.placesNearby({
