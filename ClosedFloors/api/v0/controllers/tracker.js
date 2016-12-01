@@ -19,7 +19,7 @@ module.exports.createATracker = function(req, res) {
     });
 };
 module.exports.updateATracker=function(req, res) {
-    // res.send("Tracker " + req.trackerID + " updated for Service " + req.serviceID);
+    
 };
 module.exports.trackerIDAppend = function(req, res, next) {
     req.trackerID = req.params.trackerID;
