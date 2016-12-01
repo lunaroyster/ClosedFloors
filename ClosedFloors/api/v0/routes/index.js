@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-// var v0Router = require('./v0/routes/index');
+// TODO: controller links
 
+// var v0Router = require('./v0/routes/index');
+var serviceRouter = require('./service');
 // router.use('/v0', v0Router);
 
-router.get('/', function(req, res, next) {
-    res.send("Test");
-})
+router.use('/service', serviceRouter);
 
 module.exports = router;
