@@ -1,12 +1,13 @@
 var express = require('express');
 var router = express.Router();
 
-// TODO: controller links
+var serviceController = require('../controllers/service');
+
 
 var trackerRouter = require('./tracker');
 // TODO: append trackerRouter
-router.use('/', );
-router.use('/:serviceID', );
-router.use('/:serviceID/tracker', trackerRouter);
+router.use('/', serviceController.getServices);
+router.use('/:serviceID', serviceController.serviceIDAppend, serviceController.getService);
+router.use('/:serviceID/tracker', serviceController.serviceIDAppend, trackerRouter);
 
 module.exports = router;

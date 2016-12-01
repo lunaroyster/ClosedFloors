@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-// TODO: controller links
+var trackerController = require('../controllers/tracker');
 
-router.use('/', );
-router.use('/:trackerID', );
+router.use('/', trackerController.getTrackers);
+router.use('/:trackerID', trackerController.trackerIDAppend, trackerController.getTracker);
 
 module.exports = router;
