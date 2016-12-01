@@ -15,18 +15,46 @@ module.exports.getServicesByLocation = function(latitude, longitude, serviceType
         location: [latitude, longitude],
         radius: 1000
     }, function(err, response) {
-        var resultResponse = [];
         if(!err) {
+            var resultResponse = [];
+            var newServices = [];
             var results = response.json.results;
-            for (var i=0;i<results.length;i++) {
-                resultResponse.push(results[i]);
+            for (var i = 0; i < results.length; i++) {
+                
             }
+            Service.collection.insert(newServices, null,  function(){
+                callback()
+            })
+            // var results = response.json.results;
+            // for (var i=0;i<results.length;i++) {
+            //     var res = results[i];
+            //     console.log(res);
+            //     var newService = new Service({
+            //         gmapID: res.place_id
+            //     });
+            //     var serviceQuery = Service.findOne({gmapID: res.place_id});
+            //     serviceQuery.exec(function(err, service) {
+            //         // resultResponse.push(results[i]);
+            //         if(!service){
+            //             newService.save(function(err){
+            //                 if(!err){
+            //                     resultResponse.push(newService);
+            //                 }
+            //             });
+            //         }
+            //         else {
+            //             resultResponse.push(service);
+            //         }
+            //     });
+            // }
+            
         }
-        callback(err, resultResponse);
+        
     });
 };
 
 module.exports.getServiceByID = function(serviceID, callback) {
+    console.log(serviceID)
     var serviceQuery = Service.findOne({_id:serviceID});
     serviceQuery.exec(function(err, service) {
         callback(err, service);

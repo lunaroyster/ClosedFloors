@@ -10,9 +10,9 @@ module.exports.getServices = function(req, res) {
 };
 
 module.exports.getAService = function(req, res) {
-    serviceCore.getServiceByID(req.query.serviceID, function(response) {
+    serviceCore.getServiceByID(req.serviceID, function(err, response) {
         res.status(200);
-        res.send(JSON.stringify(response));
+        res.json(response);
     });
 };
 module.exports.updateAService = function(req, res) {
