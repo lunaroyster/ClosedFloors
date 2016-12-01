@@ -1,9 +1,17 @@
+var serviceCore = require('../core/service');
+
 module.exports.getServices = function(req, res) {
-    res.send("Get Services");
+    serviceCore.getServicesByLocation(req.query.latitude, req.query.longitude, req.query.serviceType, function(response) {
+        res.status(200);
+        res.send(JSON.stringify(response));
+    });
 };
 
 module.exports.getAService = function(req, res) {
-    res.send("Get service: " + req.serviceID);
+    serviceCore.getServiceByID(req.query.serviceID, function(response) {
+        res.status(200);
+        res.send(JSON.stringify(response));
+    });
 };
 module.exports.updateAService = function(req, res) {
     res.send("Update Service " + req.serviceID);
