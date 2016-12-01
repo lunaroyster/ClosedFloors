@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var Service = mongoose.model('Service');
 
 var googleMapsClient = require('@google/maps').createClient({
     key: 'AIzaSyAzuA62GBZmVCe8BQR9QYOt0hOK0E-7zpY'
@@ -18,7 +19,6 @@ module.exports.getServicesByLocation = function(latitude, longitude, serviceType
         if(!err) {
             var results = response.json.results;
             for (var i=0;i<results.length;i++) {
-                // Query here
                 resultResponse.push(results[i]);
             }
         }
@@ -27,9 +27,12 @@ module.exports.getServicesByLocation = function(latitude, longitude, serviceType
 };
 
 module.exports.getServiceByID = function(serviceID, callback) {
-    
+    var serviceQuery = Service.findOne({_id:serviceID});
+    serviceQuery.exec(function(err, service) {
+        callback(err, service);
+    });
 };
 
 module.exports.updateServiceByID = function(serviceID, update, callback) {
     
-}
+};
