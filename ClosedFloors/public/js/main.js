@@ -2,6 +2,20 @@
 
 var app = angular.module('closedFloors', ['ngRoute', 'ngAnimate']);
 
+var searchResults = [{
+    name: "Name",
+    address: "Address Line",
+    trackers: [{
+        status: "Online",
+        name: "First Tracker"
+    },
+    {
+        status: "Offline",
+        name: "Second Tracker"
+    }
+    ]
+}];
+
 // This code handles the GUI and is a requirement of Single Page Applications. It doesn't provide any other function.
 app.config(function($routeProvider) {
     $routeProvider
