@@ -93,3 +93,7 @@ app.controller('ResultController', function($scope) {
         }
     };
 });
+
+app.controller('SavedController', function($scope) {
+    
+});
