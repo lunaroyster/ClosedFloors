@@ -77,3 +77,19 @@ app.controller('SearchController', function($scope, $http, $location) {
         });
     };
 });
+
+app.controller('ResultController', function($scope) {
+    $scope.resultmessage = "There are no results to view. Try searching again.";
+    $scope.messageInvisibility = false;
+    $scope.searchResults = [];
+    $scope.loadResults = function() {
+        if(searchResults.length==0) {
+            $scope.resultmessage = "There are no results to view. Try searching again.";
+            $scope.searchResults = [];
+        }
+        else {
+            $scope.resultmessage = "Your results:";
+            $scope.searchResults = searchResults;
+        }
+    };
+});
